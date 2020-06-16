@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cloud Uploader Options</title>
+</head>
+<body>
+<label for="oneacc"  style="font-size: medium;">Select Onedrive Account</label>
+<select id="oneacc" style="margin-left: 25vw;">
+    <option id="addODAcc">Add Account</option>
+</select>
+<br>
+<label for="dbacc"  style="font-size: medium;">Select Dropbox Account</label>
+<select id="dbacc" style="margin-left: 25vw;margin-top: 2.5vw;">
+    <option id="addDBAcc">Add Account</option>
+</select>
+<br>
+<button style="margin-top: 2.5vw;" id="clear-btn">Clear All Accounts</button>
+<p style="margin-top: 2.5vw;" id="clear" style="color: darkgreen;"></p>
+<p style="color: darkred;">You Must Logout of All Accounts Before Clearing Them or Adding A New One<br>You Can Also Remove This App From Your Cloud Service Settings</p>
+<hr>
+<label for="progress"  style="font-size: medium;">Show Upload Progress</label>
+<input type="radio" name="pro" id="progressYes" style="margin-left: 25vw;">Yes</input>
+<input type="radio" name="pro" id="progressNo" style="margin-left: 2.5vw;">No</input>
+<script src="options.js"></script>
+</body>
+</html>
