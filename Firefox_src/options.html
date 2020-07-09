@@ -1,26 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-<title>Cloud Uploader Options</title>
+    <style type="text/css">
+        div {
+            display: flex;
+            width: 90%;
+        }
+
+        label {
+            font-size: medium;
+            flex-basis: 60%;
+        }
+
+        select {
+            flex-basis: 35%;
+        }
+
+        input[type="radio"] {
+            flex-basis: 2.5%
+        }
+    </style>
+    <title>Cloud Uploader Options</title>
 </head>
+
 <body>
-<label for="oneacc"  style="font-size: medium;">Select Onedrive Account</label>
-<select id="oneacc" style="margin-left: 25vw;">
-    <option id="addODAcc">Add Account</option>
-</select>
-<br>
-<label for="dbacc"  style="font-size: medium;">Select Dropbox Account</label>
-<select id="dbacc" style="margin-left: 25vw;margin-top: 2.5vw;">
-    <option id="addDBAcc">Add Account</option>
-</select>
-<br>
-<button style="margin-top: 2.5vw;" id="clear-btn">Clear All Accounts</button>
-<p style="margin-top: 2.5vw;" id="clear" style="color: darkgreen;"></p>
-<p style="color: darkred;">You Must Logout of All Accounts Before Clearing Them or Adding A New One<br>You Can Also Remove This App From Your Cloud Service Settings</p>
-<hr>
-<label for="progress"  style="font-size: medium;">Show Upload Progress</label>
-<input type="radio" name="pro" id="progressYes" style="margin-left: 25vw;">Yes</input>
-<input type="radio" name="pro" id="progressNo" style="margin-left: 2.5vw;">No</input>
-<script src="options.js"></script>
+    <div>
+        <label for="dbacc">Select Dropbox Account</label>
+        <select id="dbacc">
+            <option id="addDBAcc">Add Account</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="oneacc">Select Onedrive Account</label>
+        <select id="oneacc">
+            <option id="addODAcc">Add Account</option>
+        </select></div>
+    <br>
+    <button id="clear-btn">Clear All Accounts</button>
+    <p style="color: darkred;font-size: x-small;">You Must Logout of All Accounts Before Clearing Them or Adding A New
+        One<br>You Can Also Remove This App From Your Cloud Service Settings</p>
+    <hr>
+    <div>
+        <label>Show Upload Progress</label>
+        <input type="radio" name="pro" id="progressYes">Yes</input>
+        <input type="radio" name="pro" id="progressNo" style="margin-left: 2.5vw;">No</input>
+    </div>
+    <hr>
+    <div>
+        <label>Dropbox Upload Directory<span style="float: right;">root/</span></label>
+        <input type="text" id="dbdir">
+    </div>
+
+    <br>
+    <div>
+        <label>Onedrive Upload Directory<span style="float: right;">root/</span></label>
+        <input type="text" id="oddir">
+    </div>
+    <hr>
+    <script src="options.js"></script>
 </body>
+
 </html>

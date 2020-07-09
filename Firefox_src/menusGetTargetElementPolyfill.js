@@ -12,4 +12,5 @@ if (!browser.menus || !browser.menus.getTargetElement) {
   browser.menus.getTargetElement = () => {
     cleanupIfNeeded();
     return menuTarget;
-  }};
+  }
+};

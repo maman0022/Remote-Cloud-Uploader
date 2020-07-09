@@ -1,34 +1,128 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Manual Upload</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Upload</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-  <style>
-    .text{color: #FFFFFF;overflow-wrap: break-word;}
-    body{background-color: gray;text-align: center;}
-    [type='radio'],h3{margin-bottom: 2.5vh;}
-    [type='text']{min-width: 1ch;max-width: 100vw;}
-    #uploadbtn{border-radius: 17%;background-color: greenyellow;width: 33%;}
-    h3{margin-top: 0%;text-decoration: underline;}
-  </style>
+<style>
+  .text {
+    color: #FFFFFF;
+    overflow-wrap: break-word;
+  }
+
+  body {
+    background-color: gray;
+    text-align: center;
+  }
+
+  [type='radio'],
+  h3 {
+    margin-bottom: 2.5vh;
+  }
+
+  [type='text'] {
+    min-width: 1ch;
+    max-width: 100vw;
+  }
+
+  #uploadbtn {
+    border-radius: 17%;
+    background-color: greenyellow;
+    width: 33%;
+  }
+
+  h3 {
+    margin-top: 0%;
+    text-decoration: underline;
+  }
+
+  .dirwrap {
+    display: none;
+  }
+
+  .typeselect {
+    display: inline;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  #filelink {
+    width: 75vw;
+    max-height: 20vh;
+    font-size: small;
+    display: block;
+    margin: auto;
+    max-width: 95vw;
+  }
+
+  .period {
+    font-size: xx-large;
+  }
+
+  .dirlabel {
+    margin-left: 2.5%;
+  }
+
+  #iteratorFilename {
+    width: 33vw;
+  }
+
+  #iteratorStartNum,
+  #iteratorExt {
+    width: 16vw;
+  }
+
+  #fmultiwrap {
+    display: none;
+  }
+</style>
+
 <body>
-<h3 class="text">File</h3>
-  <textarea id='filelink' style="width: 75vw;max-height:20vh;font-size:small"></textarea>
- <hr/>
-<h3 class="text">File Name</h3>
-<label for="urlname" class="text">Get from URL</label>
-<input type="checkbox" id="urlname" checked></input><br>
-<input type="text" id="filename" oninput="this.style.width = this.value.length + 'ch'"><span class="text" style="font-size: xx-large;">.</span ><input type="text" id="fileext" oninput="this.style.width = this.value.length + 'ch'">
- <hr/>
-<h3 class="text">Account</h3>
-    <label for="dropboxradio" class="text">Dropbox</label>
-    <input type="radio" id="dropboxradio" name="acc"></input>
+  <h3 class="typeselect text" id="single" style="margin-right: 25%;">Single File</h3>
+  <h3 id="multi" class="typeselect text">Multi-File</h3>
+  <textarea id='filelink' placeholder="Paste URL here"></textarea>
+  <hr />
+  <div id="fnamewrap">
+    <h3 class="text">File Name</h3>
+    <label for="urlname" class="text">Get from URL</label>
+    <input type="checkbox" id="urlname" checked></input><br>
+    <input type="text" id="filename" placeholder="Filename"><span class="text period">.</span><input type="text" id="fileext" placeholder="Extension">
+    <hr />
+  </div>
+  <div id="fmultiwrap">
+    <h3 class="text">File Iterator</h3>
+    <label for="iteratorUrl" class="text">Get from URL</label>
+    <input type="checkbox" id="iteratorUrl"></input><br>
+    <input type="text" id="iteratorFilename" placeholder="Filename">
+    <input type="text" id="iteratorStartNum" placeholder="Start Number">
+    <span class="text period">.</span>
+    <input type="text" id="iteratorExt" placeholder="Extension">
+    <hr />
+  </div>
+  <h3 class="text">Account</h3>
+  <input type="radio" id="dropboxradio" name="acc"></input>
+  <label for="dropboxradio" class="text">Dropbox</label>
+  <select id="dbacc">
+    <option id="addDBAcc">Add Account</option>
+  </select>
+  <div id="dbwrap" class="dirwrap">
+    <label for="dbdir" class="text dirlabel">root/</label>
+    <input type="text" id="dbdir" />
+  </div>
   <br>
-    <label for="onedriveradio" class="text">Onedrive</label>
-    <input type="radio" id="onedriveradio" name="acc"></input>
-    <hr/>
-    <button id="uploadbtn">Upload</button>
-<script src="manual.js"></script>
+  <input type="radio" id="onedriveradio" name="acc"></input>
+  <label for="onedriveradio" class="text">Onedrive</label>
+  <select id="oneacc">
+    <option id="addODAcc">Add Account</option>
+  </select>
+  <div id="odwrap" class="dirwrap">
+    <label for="oddir" class="text dirlabel">root/</label>
+    <input type="text" id="oddir" />
+  </div>
+  <hr />
+  <button id="uploadbtn">Upload</button>
+  <script src="manual.js"></script>
 </body>
+
 </html>

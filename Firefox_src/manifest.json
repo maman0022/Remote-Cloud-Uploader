@@ -2,30 +2,36 @@
   "description": "Upload To Onedrive/Dropbox",
   "manifest_version": 2,
   "name": "Cloud Uploader",
-  "version": "2.0",
+  "version": "3.1",
   "permissions": [
-"storage",
-"menus",
-"activeTab",
-"identity"
+    "storage",
+    "menus",
+    "activeTab",
+    "identity"
   ],
   "background": {
-    "scripts": ["bscript2.js"]
+    "scripts": [
+      "bscript2.js"
+    ]
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["menusGetTargetElementPolyfill.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "menusGetTargetElementPolyfill.js"
+      ]
     }
   ],
   "icons": {
     "48": "cloud-computing.png",
     "96": "cloud-computing.png",
-    "128":"cloud-computing.png",
-    "512":"cloud-computing.png"
+    "128": "cloud-computing.png",
+    "512": "cloud-computing.png"
   },
   "options_ui": {
     "page": "options.html",
-    "browser_style":false
+    "browser_style": false
   }
 }
